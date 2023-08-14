@@ -25,3 +25,21 @@ class UserDetails(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Loan(models.Model):
+    loan_id = models.CharField(primary_key=True)
+    user_id = models.ForeignKey(UserDetails, on_delete=models.DO_NOTHING)
+    amount = models.SmallIntegerField()
+    tenure_month = models.SmallIntegerField()
+    status = models.CharField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    @staticmethod
+    def generate_loanId():
+        last_loan = Loan.objects.filter().last()
+        if last_loan:
+            last_id = int(last_loan.loan_id.split('_')[1]) + 1
+        else:
+            last_id = 1
+        return f"loan_{last_id}"

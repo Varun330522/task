@@ -9,6 +9,13 @@ class ErrorCodes:
     USERNAME_EXIST = 10007
     USERNAME_WORDS = 10008
     MISSING_USERNAME = 10009
+    INVALID_AUTHORIZATION = 10010
+    LOGIN_SUCCESSFULLY = 10011
+    INVALID_LOGINPASSWORD = 10012
+    INCORRECT_PASSWORD = 10013
+    LoanApproved = 10014
+    LoanNotApproved = 10015
+    UserNotApproved = 10016
 
 
 class ErrorMessage:
@@ -18,3 +25,8 @@ class ErrorMessage:
     INVALID_EMAIL = "Enter a valid email address."
     PASSWORD_LENGTH = "Password must be at least 8 characters long."
     INVALID_PASSWORD = "Password must meet the complexity requirements."
+
+
+class CONSTANTS:
+    INTEREST = 35.88
+    YEAR = 12
